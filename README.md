@@ -18,8 +18,8 @@
 Burpsuite Pro
 
 -[sublime-text][sublime]
-..* install Metarial theme
-..* install Emmet plugins
+	* install Metarial theme
+	* install Emmet plugins
 
 [0]: https://testssl.sh/
 [1]: https://github.com/EmpireProject/Empire

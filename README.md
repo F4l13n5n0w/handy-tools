@@ -34,3 +34,10 @@ sublime-text
 [9]: https://github.com/rebootuser/LinEnum
 [10]: https://github.com/sleventyeleven/linuxprivchecker
 
+---
+git clone https://github.com/F4l13n5n0w/handy-tools
+cd handy-tools
+<after any changing>
+git add *
+git commit -m "updated something"
+git push -u origin master

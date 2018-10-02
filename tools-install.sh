@@ -20,6 +20,11 @@ git clone https://github.com/danielmiessler/SecLists.git
 # Install jwt_tool
 git clone https://github.com/ticarpi/jwt_tool.git
 
+# Install nullinux
+git clone https://github.com/m8r0wn/nullinux.git
+sudo ./nullinux/setup.sh
+
+
 # Install CMSmap
 git clone https://github.com/Dionach/CMSmap
 cd CMSmap

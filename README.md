@@ -11,6 +11,8 @@ jwt_tool
 SecLists
 LinEnum
 linuxprivchecker
+nullinux
+venom.sh
 ```
 
 Burpsuite Pro

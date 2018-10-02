@@ -17,8 +17,7 @@
 
 Burpsuite Pro
 
--[sublime-text][sublime]
-
+- [sublime-text][sublime]
 	- install Metarial theme
 	- install Emmet plugins
 

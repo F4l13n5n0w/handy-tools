@@ -15,12 +15,11 @@
 - [linuxprivchecker][10]
 
 
-
 Burpsuite Pro
 
-sublime-text
-- install Metarial theme
-- install Emmet plugins
+-[sublime-text][sublime]
+-- install Metarial theme
+-- install Emmet plugins
 
 [0]: https://testssl.sh/
 [1]: https://github.com/EmpireProject/Empire
@@ -34,6 +33,8 @@ sublime-text
 [9]: https://github.com/rebootuser/LinEnum
 [10]: https://github.com/sleventyeleven/linuxprivchecker
 
+[sublime]: https://www.sublimetext.com/3
+
 ---
 ```
 git clone https://github.com/F4l13n5n0w/handy-tools
@@ -41,5 +42,6 @@ cd handy-tools
 <after any changing>
 git add *
 git commit -m "updated something"
-```
 git push -u origin master
+```
+

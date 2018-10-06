@@ -5,14 +5,19 @@
 - [testssl.sh][0]
 - [empire][1]
 - [CMSmap][2]
-	- Do not forget to update after install
-		- `cmsmap -U PC`
+	- Do not forget to update Plugins after install
+		- `cmsmap -U P`
 - [subfinder][3]
 - [recursebuster][4]
 	- Update error fix
 		- `rm ~/go/bin/recursebuster`
 		- `rm -rf ~/go/src/github.com/c-sto`
 		- `go get github.com/c-sto/recursebuster`
+		- ```
+		  rm ~/go/bin/recursebuster
+		  rm -rf ~/go/src/github.com/c-sto
+		  go get github.com/c-sto/recursebuster 
+		  ```
 - [jwt_tool][5]
 - [SecLists][6]
 - [nullinux][7]

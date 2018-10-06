@@ -7,6 +7,10 @@
 - [CMSmap][2]
 - [subfinder][3]
 - [recursebuster][4]
+	- Update fix
+		- `rm ~/go/bin/recursebuster`
+		- `rm -rf ~/go/src/github.com/c-sto`
+		- `go get github.com/c-sto/recursebuster`
 - [jwt_tool][5]
 - [SecLists][6]
 - [nullinux][7]

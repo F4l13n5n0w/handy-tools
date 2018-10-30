@@ -28,6 +28,7 @@
 - [ps1-toolkit][12](Obfucation version of PowerSploit)
 - [WindowsEnum][13]
 - [Windows-Exploit-Suggester][14]
+- [Seth][15]
 
 
 Burpsuite Pro
@@ -51,6 +52,7 @@ Burpsuite Pro
 [12]: https://github.com/vysec/ps1-toolkit.git
 [13]: https://github.com/absolomb/WindowsEnum
 [14]: https://github.com/GDSSecurity/Windows-Exploit-Suggester
+[15]: https://github.com/SySS-Research/Seth
 
 [sublime]: https://www.sublimetext.com/3
 

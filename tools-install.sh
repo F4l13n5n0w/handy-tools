@@ -47,6 +47,9 @@ git clone https://github.com/r00t-3xp10it/venom.git
 git clone https://github.com/GDSSecurity/Windows-Exploit-Suggester
 sudo Windows-Exploit-Suggester/windows-exploit-suggester.py --update
 
+# Install Seth RDP MiTM tool
+git clone https://github.com/SySS-Research/Seth
+
 # Install CMSmap
 git clone https://github.com/Dionach/CMSmap
 cd CMSmap

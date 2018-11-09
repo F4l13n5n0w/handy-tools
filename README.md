@@ -29,7 +29,12 @@
 - [WindowsEnum][13]
 - [Windows-Exploit-Suggester][14]
 - [Seth][15]
-
+- [MITMf][16]
+- [SigThief][17]
+- [SIET][18]
+- [CloudFail][19]
+- [nmap-vulners][20]
+- [Infoga][21]
 
 Burpsuite Pro
 
@@ -53,6 +58,12 @@ Burpsuite Pro
 [13]: https://github.com/absolomb/WindowsEnum
 [14]: https://github.com/GDSSecurity/Windows-Exploit-Suggester
 [15]: https://github.com/SySS-Research/Seth
+[16]: https://github.com/byt3bl33d3r/MITMf
+[17]: https://github.com/secretsquirrel/SigThief
+[18]: https://github.com/Sab0tag3d/SIET
+[19]: https://github.com/m0rtem/CloudFail
+[20]: https://github.com/vulnersCom/nmap-vulners
+[21]: https://github.com/The404Hacking/Infoga
 
 [sublime]: https://www.sublimetext.com/3
 

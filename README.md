@@ -25,7 +25,7 @@
 - [LinEnum][9]
 - [linuxprivchecker][10]
 - [crackmapexec][11]
-- [ps1-toolkit][12](Obfucation version of PowerSploit)
+- [ps1-toolkit][12] (Obfucation version of PowerSploit)
 - [WindowsEnum][13]
 - [Windows-Exploit-Suggester][14]
 - [Seth][15] (Windows RDP MiTM Exploit Tool)

@@ -35,6 +35,7 @@
 - [CloudFail][19]
 - [nmap-vulners][20]
 - [Infoga][21] (Emails harvester)
+- [eyeBeam][22] (WEB Screenshot Tool)
 
 Burpsuite Pro
 
@@ -71,6 +72,7 @@ Burpsuite Pro
 [19]: https://github.com/m0rtem/CloudFail
 [20]: https://github.com/vulnersCom/nmap-vulners
 [21]: https://github.com/The404Hacking/Infoga
+[22]: https://github.com/F4l13n5n0w/eyeBeam
 
 [sublime]: https://www.sublimetext.com/3
 

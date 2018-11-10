@@ -81,6 +81,13 @@ cd CMSmap
 pip3 install .
 cd ..
 
+# Install eyeBeam
+pip install selenium
+wget https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-linux64.tar.gz
+tar zxvf geckodriver-v0.23.0-linux64.tar.gz
+mv geckodriver /usr/local/bin/
+git clone https://github.com/F4l13n5n0w/eyeBeam.git
+
 
 mkdir /var/www/html/privesc
 
@@ -106,3 +113,5 @@ cp WindowsEnum/WindowsEnum.ps1 /var/www/html/privesc/WindowsEnum.ps1
 # Install NMAP vulners.nse
 wget https://raw.githubusercontent.com/vulnersCom/nmap-vulners/master/vulners.nse -O /usr/share/nmap/scripts/vulners.nse
 
+# Install webfuzz.txt
+wget https://gist.githubusercontent.com/skim-milk/6500420e54bb154063551fc7ef527123/raw/e6b731e951ad2aaefbef4d91553e1419733f7dcd/webfuzz.txt -O /usr/share/wordlists/webfuzz.txt

@@ -21,26 +21,33 @@
 - [jwt_tool][5]
 - [SecLists][6]
 - [nullinux][7]
-- [venom][8]
+- [venom][8] (Meterpreter Payload AV Bypass Tool)
 - [LinEnum][9]
 - [linuxprivchecker][10]
 - [crackmapexec][11]
 - [ps1-toolkit][12](Obfucation version of PowerSploit)
 - [WindowsEnum][13]
 - [Windows-Exploit-Suggester][14]
-- [Seth][15]
+- [Seth][15] (Windows RDP MiTM Exploit Tool)
 - [MITMf][16]
 - [SigThief][17]
-- [SIET][18]
+- [SIET][18] (Cisco Smart Installation Exploit Tool)
 - [CloudFail][19]
 - [nmap-vulners][20]
-- [Infoga][21]
+- [Infoga][21] (Emails harvester)
 
 Burpsuite Pro
 
 - [sublime-text][sublime]
-	- install Metarial theme
+	- install Material theme
+		- Preference -> Package Settings -> Material Theme -> Active
 	- install Emmet plugins
+	- install SublimeLinter
+	- install SublimeCodeIntel
+	- install SublimeREPL
+	- install FileDiffs
+	- install Alignment
+	- install OmniMarkupPreviewer
 
 [0]: https://testssl.sh/
 [1]: https://github.com/EmpireProject/Empire

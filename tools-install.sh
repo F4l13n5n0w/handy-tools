@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Set terminal bold and color
+red_bold=`tput bold && tput setaf 1`
+green_bold=`tput bold && tput setaf 2`
+
 sudo apt-get install golang python3-pip python-dnspython -y
 sudo apt-get install testssl.sh -y
 sudo apt-get install crackmapexec -y
@@ -7,6 +11,7 @@ sudo apt-get install crackmapexec -y
 
 # Install sublime-text3
 # Need to update here if any updates on sublime-text3
+echo "${green_bold}[Info] Install sublime-text3"
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 sudo apt-get install apt-transport-https -y
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
@@ -25,6 +30,7 @@ export PATH=$PATH:/root/go/bin/
 cd /opt/
 
 # Install Empire
+echo "${green_bold}[Info] Install Empire"
 git clone https://github.com/EmpireProject/Empire.git
 cd Empire
 sudo setup/install.sh
@@ -37,6 +43,7 @@ git clone https://github.com/danielmiessler/SecLists.git
 git clone https://github.com/ticarpi/jwt_tool.git
 
 # Install nullinux
+echo "${green_bold}[Info] Install nullinux"
 git clone https://github.com/m8r0wn/nullinux.git
 sudo ./nullinux/setup.sh
 
@@ -44,6 +51,7 @@ sudo ./nullinux/setup.sh
 git clone https://github.com/r00t-3xp10it/venom.git
 
 # Install Windows-Exploit-Suggester
+echo "${green_bold}[Info] Install Windows-Exploit-Suggester"
 git clone https://github.com/GDSSecurity/Windows-Exploit-Suggester
 sudo Windows-Exploit-Suggester/windows-exploit-suggester.py --update
 
@@ -60,12 +68,14 @@ git clone https://github.com/Sab0tag3d/SIET.git
 git clone https://github.com/The404Hacking/Infoga.git
 
 # Install CloudFail
+echo "${green_bold}[Info] Install CloudFail"
 git clone https://github.com/m0rtem/CloudFail.git
 cd CloudFail
 pip3 install -r requirements.txt
 cd ..
 
 # Install MITMf Man-in-The-Middle attack framework
+echo "${green_bold}[Info] Install MITMf"
 sudo apt-get install python-dev python-setuptools libpcap0.8-dev libnetfilter-queue-dev libssl-dev libjpeg-dev libxml2-dev libxslt1-dev libcapstone3 libcapstone-dev libffi-dev file -y
 pip install virtualenvwrapper
 source `locate virtualenvwrapper.sh`
@@ -82,11 +92,25 @@ pip3 install .
 cd ..
 
 # Install eyeBeam
-pip install selenium
-wget https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-linux64.tar.gz
-tar zxvf geckodriver-v0.23.0-linux64.tar.gz
-mv geckodriver /usr/local/bin/
+echo "${green_bold}[Info] Install eyeBeam"
+sudo apt-get install build-essential chrpath libssl-dev libxft-dev
+sudo apt-get install libfreetype6 libfreetype6-dev
+sudo apt-get install libfontconfig1 libfontconfig1-dev
+export PHANTOM_JS="phantomjs-2.1.1-linux-x86_64"
+wget https://bitbucket.org/ariya/phantomjs/downloads/$PHANTOM_JS.tar.bz2
+sudo tar xvjf $PHANTOM_JS.tar.bz2
+sudo mv $PHANTOM_JS /usr/local/share
+sudo ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin
+pip install progress
+pip install heimdall
 git clone https://github.com/F4l13n5n0w/eyeBeam.git
+
+# The following installation process only working on Kali 2018v4
+#pip install selenium
+#wget https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-linux64.tar.gz
+#tar zxvf geckodriver-v0.23.0-linux64.tar.gz
+#mv geckodriver /usr/local/bin/
+#git clone https://github.com/F4l13n5n0w/eyeBeam.git
 
 
 mkdir /var/www/html/privesc

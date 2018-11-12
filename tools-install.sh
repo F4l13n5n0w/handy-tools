@@ -93,9 +93,9 @@ cd ..
 
 # Install eyeBeam
 echo "${green_bold}[Info] Install eyeBeam"
-sudo apt-get install build-essential chrpath libssl-dev libxft-dev
-sudo apt-get install libfreetype6 libfreetype6-dev
-sudo apt-get install libfontconfig1 libfontconfig1-dev
+sudo apt-get install build-essential chrpath libssl-dev libxft-dev -y
+sudo apt-get install libfreetype6 libfreetype6-dev -y
+sudo apt-get install libfontconfig1 libfontconfig1-dev -y
 export PHANTOM_JS="phantomjs-2.1.1-linux-x86_64"
 wget https://bitbucket.org/ariya/phantomjs/downloads/$PHANTOM_JS.tar.bz2
 sudo tar xvjf $PHANTOM_JS.tar.bz2

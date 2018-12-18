@@ -36,6 +36,7 @@
 - [nmap-vulners][20]
 - [Infoga][21] (Emails harvester)
 - [eyeBeam][22] (WEB Screenshot Tool)
+- [ObfuscatedEmpire][23] (AV Bypass Empire)
 
 Burpsuite Pro
 
@@ -73,6 +74,7 @@ Burpsuite Pro
 [20]: https://github.com/vulnersCom/nmap-vulners
 [21]: https://github.com/The404Hacking/Infoga
 [22]: https://github.com/F4l13n5n0w/eyeBeam
+[23]: https://github.com/cobbr/ObfuscatedEmpire
 
 [sublime]: https://www.sublimetext.com/3
 

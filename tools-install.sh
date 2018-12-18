@@ -91,6 +91,17 @@ cd CMSmap
 pip3 install .
 cd ..
 
+# install ObfuscatedEmpire
+git clone https://github.com/cobbr/ObfuscatedEmpire.git
+cd ObfuscatedEmpire
+cd setup
+./install.sh
+pip uninstall urllib3
+pip install urllib3==1.22
+sudo ln -s /usr/bin/pwsh /usr/local/bin/powershell
+cd ..
+cd ..
+
 # Install eyeBeam
 echo "${green_bold}[Info] Install eyeBeam"
 sudo apt-get install build-essential chrpath libssl-dev libxft-dev -y

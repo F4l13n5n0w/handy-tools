@@ -29,6 +29,16 @@ export PATH=$PATH:/root/go/bin/
 
 cd /opt/
 
+# Install Interlace
+git clone https://github.com/codingo/Interlace.git
+cd Interlace
+python3 setup.py install
+cd /opt/
+
+# Install takeover
+git clone https://github.com/m4ll0k/takeover.git
+chmod +x takeover/takeover.py
+
 # Install aquatone
 mkdir aquatone
 cd aquatone

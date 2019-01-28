@@ -39,6 +39,8 @@
 - [eyeBeam][22] (WEB Screenshot Tool)
 - [ObfuscatedEmpire][23] (AV Bypass Empire)
 - [aquatone][25] (Fast Web Screenshots)
+- [takeover][26] (Subdomain Takeover Finder)
+- [interlace][27] (single-thread to multi-thread)
 
 Burpsuite Pro
 
@@ -79,6 +81,8 @@ Burpsuite Pro
 [23]: https://github.com/cobbr/ObfuscatedEmpire
 [24]: https://github.com/nabla-c0d3/sslyze
 [25]: https://github.com/michenriksen/aquatone
+[26]: https://github.com/m4ll0k/takeover
+[27]: https://github.com/codingo/Interlace
 
 
 [sublime]: https://www.sublimetext.com/3

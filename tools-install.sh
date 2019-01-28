@@ -5,7 +5,7 @@ red_bold=`tput bold && tput setaf 1`
 green_bold=`tput bold && tput setaf 2`
 
 sudo apt-get install golang python3-pip python-dnspython -y
-sudo apt-get install testssl.sh -y
+sudo apt-get install sslyze,testssl.sh -y
 sudo apt-get install crackmapexec -y
 
 
@@ -27,6 +27,16 @@ go get github.com/c-sto/recursebuster
 
 export PATH=$PATH:/root/go/bin/
 
+cd /opt/
+
+# Install aquatone
+mkdir aquatone
+cd aquatone
+wget https://github.com/michenriksen/aquatone/releases/download/v1.4.3/aquatone_linux_amd64_1.4.3.zip
+unzip aquatone_linux_amd64_1.4.3.zip
+rm aquatone_linux_amd64_1.4.3.zip
+apt-get install chromium-browser -y
+ln -ns /opt/aquatone/aquatone /usr/local/bin/aquatone
 cd /opt/
 
 # Install Empire

@@ -3,6 +3,7 @@
 ## Tools List
 
 - [testssl.sh][0]
+- [sslyze][24]
 - [empire][1]
 - [CMSmap][2]
 	- Do not forget to update Plugins after install
@@ -37,6 +38,7 @@
 - [Infoga][21] (Emails harvester)
 - [eyeBeam][22] (WEB Screenshot Tool)
 - [ObfuscatedEmpire][23] (AV Bypass Empire)
+- [aquatone][25] (Fast Web Screenshots)
 
 Burpsuite Pro
 
@@ -75,6 +77,9 @@ Burpsuite Pro
 [21]: https://github.com/The404Hacking/Infoga
 [22]: https://github.com/F4l13n5n0w/eyeBeam
 [23]: https://github.com/cobbr/ObfuscatedEmpire
+[24]: https://github.com/nabla-c0d3/sslyze
+[25]: https://github.com/michenriksen/aquatone
+
 
 [sublime]: https://www.sublimetext.com/3
 

@@ -127,11 +127,19 @@ echo "${green_bold}[Info] Install webscreenshot"
 sudo apt-get install phantomjs
 pip install webscreenshot
 
-# Install 
+# Install Phantom-Evasion
 echo "${green_bold}[Info] Install Phantom-Evasion"
 cd /opt
 git clone https://github.com/oddcod3/Phantom-Evasion.git
 cd ..
+
+# Install altdns
+echo "${green_bold}[Info] Install altdns"
+git clone https://github.com/infosec-au/altdns.git
+cd altdns
+pip install -r requirements.txt
+cd ..
+
 
 # Install eyeBeam
 #echo "${green_bold}[Info] Install eyeBeam"

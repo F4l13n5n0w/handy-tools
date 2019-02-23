@@ -42,6 +42,7 @@
 - [takeover][26] (Subdomain Takeover Finder)
 - [interlace][27] (single-thread to multi-thread)
 - [webscreenshot][28] (python based url to screenshot image tool)
+- [altdns][29] (subdomain discovery tool)
 
 Burpsuite Pro
 
@@ -85,6 +86,7 @@ Burpsuite Pro
 [26]: https://github.com/m4ll0k/takeover
 [27]: https://github.com/codingo/Interlace
 [28]: https://github.com/maaaaz/webscreenshot
+[29]: https://github.com/infosec-au/altdns
 
 
 [sublime]: https://www.sublimetext.com/3

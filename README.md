@@ -41,6 +41,7 @@
 - [aquatone][25] (Fast Web Screenshots)
 - [takeover][26] (Subdomain Takeover Finder)
 - [interlace][27] (single-thread to multi-thread)
+- [webscreenshot][28] (python based url to screenshot image tool)
 
 Burpsuite Pro
 
@@ -83,6 +84,7 @@ Burpsuite Pro
 [25]: https://github.com/michenriksen/aquatone
 [26]: https://github.com/m4ll0k/takeover
 [27]: https://github.com/codingo/Interlace
+[28]: https://github.com/maaaaz/webscreenshot
 
 
 [sublime]: https://www.sublimetext.com/3

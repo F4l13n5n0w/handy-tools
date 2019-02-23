@@ -189,3 +189,11 @@ wget https://raw.githubusercontent.com/vulnersCom/nmap-vulners/master/vulners.ns
 
 # Install webfuzz.txt
 wget https://gist.githubusercontent.com/skim-milk/6500420e54bb154063551fc7ef527123/raw/e6b731e951ad2aaefbef4d91553e1419733f7dcd/webfuzz.txt -O /usr/share/wordlists/webfuzz.txt
+
+# Download the latest PowerView.ps1
+wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1 -O /var/www/html/privesc/PowerView.ps1
+
+# Download SharpHound
+wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.ps1
+wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.exe
+

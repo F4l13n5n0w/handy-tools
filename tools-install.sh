@@ -5,7 +5,7 @@ red_bold=`tput bold && tput setaf 1`
 green_bold=`tput bold && tput setaf 2`
 
 sudo apt-get install golang python3-pip python-dnspython -y
-sudo apt-get install sslyze,testssl.sh -y
+sudo apt-get install sslyze testssl.sh -y
 sudo apt-get install crackmapexec -y
 
 
@@ -45,7 +45,7 @@ cd aquatone
 wget https://github.com/michenriksen/aquatone/releases/download/v1.4.3/aquatone_linux_amd64_1.4.3.zip
 unzip aquatone_linux_amd64_1.4.3.zip
 rm aquatone_linux_amd64_1.4.3.zip
-apt-get install chromium-browser -y
+sudo apt-get install chromium-browser -y
 ln -ns /opt/aquatone/aquatone /usr/local/bin/aquatone
 cd /opt/
 
@@ -68,7 +68,7 @@ git clone https://github.com/m8r0wn/nullinux.git
 sudo ./nullinux/setup.sh
 
 # Install venom.sh
-git clone https://github.com/r00t-3xp10it/venom.git
+#git clone https://github.com/r00t-3xp10it/venom.git
 
 # Install Windows-Exploit-Suggester
 echo "${green_bold}[Info] Install Windows-Exploit-Suggester"
@@ -122,19 +122,30 @@ sudo ln -s /usr/bin/pwsh /usr/local/bin/powershell
 cd ..
 cd ..
 
+# Install webscreenshot
+echo "${green_bold}[Info] Install webscreenshot"
+sudo apt-get install phantomjs
+pip install webscreenshot
+
+# Install 
+echo "${green_bold}[Info] Install Phantom-Evasion"
+cd /opt
+git clone https://github.com/oddcod3/Phantom-Evasion.git
+cd ..
+
 # Install eyeBeam
-echo "${green_bold}[Info] Install eyeBeam"
-sudo apt-get install build-essential chrpath libssl-dev libxft-dev -y
-sudo apt-get install libfreetype6 libfreetype6-dev -y
-sudo apt-get install libfontconfig1 libfontconfig1-dev -y
-export PHANTOM_JS="phantomjs-2.1.1-linux-x86_64"
-wget https://bitbucket.org/ariya/phantomjs/downloads/$PHANTOM_JS.tar.bz2
-sudo tar xvjf $PHANTOM_JS.tar.bz2
-sudo mv $PHANTOM_JS /usr/local/share
-sudo ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin
-pip install progress
-pip install heimdall
-git clone https://github.com/F4l13n5n0w/eyeBeam.git
+#echo "${green_bold}[Info] Install eyeBeam"
+#sudo apt-get install build-essential chrpath libssl-dev libxft-dev -y
+#sudo apt-get install libfreetype6 libfreetype6-dev -y
+#sudo apt-get install libfontconfig1 libfontconfig1-dev -y
+#export PHANTOM_JS="phantomjs-2.1.1-linux-x86_64"
+#wget https://bitbucket.org/ariya/phantomjs/downloads/$PHANTOM_JS.tar.bz2
+#sudo tar xvjf $PHANTOM_JS.tar.bz2
+#sudo mv $PHANTOM_JS /usr/local/share
+#sudo ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin
+#pip install progress
+#pip install heimdall
+#git clone https://github.com/F4l13n5n0w/eyeBeam.git
 
 # The following installation process only working on Kali 2018v4
 #pip install selenium

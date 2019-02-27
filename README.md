@@ -43,6 +43,7 @@
 - [interlace][27] (single-thread to multi-thread)
 - [webscreenshot][28] (python based url to screenshot image tool)
 - [altdns][29] (subdomain discovery tool)
+- [rtfm][30] (searchable RTFM)
 
 Burpsuite Pro
 
@@ -87,6 +88,7 @@ Burpsuite Pro
 [27]: https://github.com/codingo/Interlace
 [28]: https://github.com/maaaaz/webscreenshot
 [29]: https://github.com/infosec-au/altdns
+[30]: https://github.com/leostat/rtfm
 
 
 [sublime]: https://www.sublimetext.com/3

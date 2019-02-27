@@ -140,6 +140,14 @@ cd altdns
 pip install -r requirements.txt
 cd ..
 
+# Install rtfm
+git clone https://github.com/leostat/rtfm.git
+cd rtfm
+chmod +x rtfm.py
+./rtfm.py -u
+cd ..
+
+
 
 # Install eyeBeam
 #echo "${green_bold}[Info] Install eyeBeam"

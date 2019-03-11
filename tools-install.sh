@@ -147,6 +147,11 @@ chmod +x rtfm.py
 ./rtfm.py -u
 cd ..
 
+# Install Winpayloads
+git clone https://github.com/nccgroup/Winpayloads.git
+cd Winpayloads
+./setup.sh
+cd ..
 
 
 # Install eyeBeam

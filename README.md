@@ -44,6 +44,7 @@
 - [webscreenshot][28] (python based url to screenshot image tool)
 - [altdns][29] (subdomain discovery tool)
 - [rtfm][30] (searchable RTFM)
+- [Winpayloads] (AV Bypassed Windows payload generator)
 
 Burpsuite Pro
 
@@ -89,6 +90,7 @@ Burpsuite Pro
 [28]: https://github.com/maaaaz/webscreenshot
 [29]: https://github.com/infosec-au/altdns
 [30]: https://github.com/leostat/rtfm
+[31]: https://github.com/nccgroup/Winpayloads
 
 
 [sublime]: https://www.sublimetext.com/3

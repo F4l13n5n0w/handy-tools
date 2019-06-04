@@ -45,6 +45,7 @@
 - [altdns][29] (subdomain discovery tool)
 - [rtfm][30] (searchable RTFM)
 - [Winpayloads][31] (AV Bypassed Windows payload generator)
+- [dirsearch][32] (brute force directories and files in websites)
 
 Burpsuite Pro
 
@@ -91,6 +92,7 @@ Burpsuite Pro
 [29]: https://github.com/infosec-au/altdns
 [30]: https://github.com/leostat/rtfm
 [31]: https://github.com/nccgroup/Winpayloads
+[32]: https://github.com/maurosoria/dirsearch
 
 
 [sublime]: https://www.sublimetext.com/3

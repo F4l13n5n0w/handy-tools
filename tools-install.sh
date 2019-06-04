@@ -87,6 +87,9 @@ git clone https://github.com/Sab0tag3d/SIET.git
 # Install Infoga
 git clone https://github.com/The404Hacking/Infoga.git
 
+# Install dirsearch
+git clone https://github.com/maurosoria/dirsearch.git
+
 # Install CloudFail
 echo "${green_bold}[Info] Install CloudFail"
 git clone https://github.com/m0rtem/CloudFail.git

@@ -46,6 +46,10 @@
 - [rtfm][30] (searchable RTFM)
 - [Winpayloads][31] (AV Bypassed Windows payload generator)
 - [dirsearch][32] (brute force directories and files in websites)
+- [amass][33](OWASP Amass subdomain discovery, have to manually install for latest version)
+- [massdns][34](A high-performance DNS stub resolver)
+- [SubOver][35](A Powerfull Subdomain Takeover Tool -- Discontinued)
+
 
 Burpsuite Pro
 
@@ -93,6 +97,11 @@ Burpsuite Pro
 [30]: https://github.com/leostat/rtfm
 [31]: https://github.com/nccgroup/Winpayloads
 [32]: https://github.com/maurosoria/dirsearch
+[33]: https://github.com/OWASP/Amass/releases
+[34]: https://github.com/blechschmidt/massdns/
+[35]: https://github.com/Ice3man543/SubOver
+
+
 
 
 [sublime]: https://www.sublimetext.com/3

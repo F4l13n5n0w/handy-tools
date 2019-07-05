@@ -18,6 +18,8 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 sudo apt-get update
 sudo apt-get install sublime-text -y
 
+# Install SubOver
+go get github.com/Ice3man543/SubOver
 
 # Install subfinder
 go get github.com/subfinder/subfinder
@@ -156,6 +158,11 @@ cd Winpayloads
 ./setup.sh
 cd ..
 
+# Install massdns
+git clone https://github.com/blechschmidt/massdns/
+cd massdns
+make
+cd ..
 
 # Install eyeBeam
 #echo "${green_bold}[Info] Install eyeBeam"
@@ -210,6 +217,7 @@ wget https://gist.githubusercontent.com/skim-milk/6500420e54bb154063551fc7ef5271
 wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1 -O /var/www/html/privesc/PowerView.ps1
 
 # Download SharpHound
-wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.ps1
-wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.exe
+wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.ps1 -O /var/www/html/privesc/SharpHound.ps1
+wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.exe -O /var/www/html/privesc/SharpHound.exe
+
 

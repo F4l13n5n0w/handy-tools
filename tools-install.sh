@@ -8,7 +8,7 @@ sudo apt-get install golang python3-pip python-dnspython -y
 sudo apt-get install sslyze testssl.sh -y
 sudo apt-get install crackmapexec -y
 
-'''
+
 # Install sublime-text3
 # Need to update here if any updates on sublime-text3
 echo "${green_bold}[Info] Install sublime-text3"
@@ -17,7 +17,7 @@ sudo apt-get install apt-transport-https -y
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt-get update
 sudo apt-get install sublime-text -y
-'''
+
 
 # Install SubOver
 go get github.com/Ice3man543/SubOver
@@ -117,18 +117,18 @@ cd CMSmap
 pip3 install .
 cd ..
 
-'''
+
 # install ObfuscatedEmpire
-git clone https://github.com/cobbr/ObfuscatedEmpire.git
-cd ObfuscatedEmpire
-cd setup
-./install.sh
-pip uninstall urllib3
-pip install urllib3==1.22
-sudo ln -s /usr/bin/pwsh /usr/local/bin/powershell
-cd ..
-cd ..
-'''
+#git clone https://github.com/cobbr/ObfuscatedEmpire.git
+#cd ObfuscatedEmpire
+#cd setup
+#./install.sh
+#pip uninstall urllib3
+#pip install urllib3==1.22
+#sudo ln -s /usr/bin/pwsh /usr/local/bin/powershell
+#cd ..
+#cd ..
+
 
 # Install webscreenshot
 echo "${green_bold}[Info] Install webscreenshot"

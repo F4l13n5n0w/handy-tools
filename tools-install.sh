@@ -8,7 +8,7 @@ sudo apt-get install golang python3-pip python-dnspython -y
 sudo apt-get install sslyze testssl.sh -y
 sudo apt-get install crackmapexec -y
 
-
+'''
 # Install sublime-text3
 # Need to update here if any updates on sublime-text3
 echo "${green_bold}[Info] Install sublime-text3"
@@ -17,6 +17,7 @@ sudo apt-get install apt-transport-https -y
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt-get update
 sudo apt-get install sublime-text -y
+'''
 
 # Install SubOver
 go get github.com/Ice3man543/SubOver
@@ -116,6 +117,7 @@ cd CMSmap
 pip3 install .
 cd ..
 
+'''
 # install ObfuscatedEmpire
 git clone https://github.com/cobbr/ObfuscatedEmpire.git
 cd ObfuscatedEmpire
@@ -126,6 +128,7 @@ pip install urllib3==1.22
 sudo ln -s /usr/bin/pwsh /usr/local/bin/powershell
 cd ..
 cd ..
+'''
 
 # Install webscreenshot
 echo "${green_bold}[Info] Install webscreenshot"
@@ -201,7 +204,7 @@ chmod +x /var/www/html/privesc/lpc.py
 # Install ps1-toolkit (Obfucation version of PowerSploit, AV bypass)
 mkdir /var/www/html/privesc/ps1-toolkit
 git clone https://github.com/vysec/ps1-toolkit.git
-cp ps1-toolkit/*.ps1 /var/www/html/privesc/ps1-toolkit/
+cp ps1-toolkit/*.ps1 /var/www/html/windows/ps1-toolkit/
 
 # Install WindowsEnum
 git clone https://github.com/absolomb/WindowsEnum
@@ -214,10 +217,10 @@ wget https://raw.githubusercontent.com/vulnersCom/nmap-vulners/master/vulners.ns
 wget https://gist.githubusercontent.com/skim-milk/6500420e54bb154063551fc7ef527123/raw/e6b731e951ad2aaefbef4d91553e1419733f7dcd/webfuzz.txt -O /usr/share/wordlists/webfuzz.txt
 
 # Download the latest PowerView.ps1
-wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1 -O /var/www/html/privesc/PowerView.ps1
+wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1 -O /var/www/html/windows/PowerView.ps1
 
 # Download SharpHound
-wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.ps1 -O /var/www/html/privesc/SharpHound.ps1
-wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.exe -O /var/www/html/privesc/SharpHound.exe
+wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.ps1 -O /var/www/html/windows/SharpHound.ps1
+wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.exe -O /var/www/html/windows/SharpHound.exe
 
 

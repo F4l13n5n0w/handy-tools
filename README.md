@@ -1,5 +1,7 @@
 # handy-tools
 
+This is a bash script to automatically install tools when setup a Kali linux or ubuntu linux. 
+
 ## Tools List
 
 - [testssl.sh][0]

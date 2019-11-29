@@ -176,6 +176,13 @@ make
 cp bin/massdns /usr/local/sbin/
 cd ..
 
+# Install snapd and Amass
+sudo apt install snapd
+service snapd start
+sudo snap install amass
+snap refresh
+
+
 # Install eyeBeam
 #echo "${green_bold}[Info] Install eyeBeam"
 #sudo apt-get install build-essential chrpath libssl-dev libxft-dev -y

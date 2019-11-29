@@ -55,6 +55,11 @@ This is a bash script to automatically install tools when setup a Kali linux or 
 
 Burpsuite Pro
 
+- [vscode][vscode]
+	- install Python extension
+	- install Gist extension
+	- install ESLint extension
+
 - [sublime-text][sublime]
 	- install Material theme
 		- Preference -> Package Settings -> Material Theme -> Active
@@ -107,6 +112,7 @@ Burpsuite Pro
 
 
 [sublime]: https://www.sublimetext.com/3
+[vscode]: https://medium.com/@calypsobronte/vs-code-in-kali-linux-2018-4-9e96e92d13ca
 
 ---
 ```

@@ -19,6 +19,12 @@ sudo apt-get update
 sudo apt-get install sublime-text -y
 
 
+# Install VS Code
+sudo curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /etc/apt/trusted.gpg.d/microsoft.gpg
+sudo echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list
+sudo apt update && apt install code
+
+
 # Install SubOver
 go get github.com/Ice3man543/SubOver
 

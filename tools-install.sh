@@ -68,7 +68,9 @@ git clone https://github.com/ticarpi/jwt_tool.git
 # Install nullinux
 echo "${green_bold}[Info] Install nullinux"
 git clone https://github.com/m8r0wn/nullinux.git
-sudo ./nullinux/setup.sh
+cd nullinux
+sudo ./setup.sh
+cd ..
 
 # Install venom.sh
 #git clone https://github.com/r00t-3xp10it/venom.git
@@ -165,6 +167,7 @@ cd ..
 git clone https://github.com/blechschmidt/massdns/
 cd massdns
 make
+cp bin/massdns /usr/local/sbin/
 cd ..
 
 # Install eyeBeam

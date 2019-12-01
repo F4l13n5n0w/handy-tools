@@ -51,6 +51,8 @@ This is a bash script to automatically install tools when setup a Kali linux or 
 - [amass][33](OWASP Amass subdomain discovery, have to manually install for latest version)
 - [massdns][34](A high-performance DNS stub resolver)
 - [SubOver][35](A Powerfull Subdomain Takeover Tool -- Discontinued)
+- [dnsvalidator][36](A very fast subdomain validator)
+- [findomain][37](The fastest and cross-platform subdomain enumerator)
 
 
 Burpsuite Pro
@@ -107,7 +109,8 @@ Burpsuite Pro
 [33]: https://github.com/OWASP/Amass/releases
 [34]: https://github.com/blechschmidt/massdns/
 [35]: https://github.com/Ice3man543/SubOver
-
+[36]: https://github.com/vortexau/dnsvalidator
+[37]: https://github.com/Edu4rdSHL/findomain
 
 
 

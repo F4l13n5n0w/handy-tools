@@ -170,11 +170,22 @@ cd Winpayloads
 cd ..
 
 # Install massdns
-git clone https://github.com/blechschmidt/massdns/
+git clone https://github.com/blechschmidt/massdns.git
 cd massdns
 make
 cp bin/massdns /usr/local/sbin/
 cd ..
+
+# Install DNS Validator
+git clone https://github.com/vortexau/dnsvalidator.git
+cd dnsvalidator
+python3 ./setup.py install
+cd ..
+
+# Install findomain
+wget https://github.com/Edu4rdSHL/findomain/releases/latest/download/findomain-linux
+chmod +x ./findomain-linux
+cp findomain-linux /usr/local/sbin/
 
 # Install snapd and Amass
 sudo apt install snapd
@@ -239,5 +250,10 @@ wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/Pow
 # Download SharpHound
 wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.ps1 -O /var/www/html/windows/SharpHound.ps1
 wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.exe -O /var/www/html/windows/SharpHound.exe
+
+# Download commonspeak2 wordlists
+cd /opt
+git clone https://github.com/assetnote/commonspeak2-wordlists.git
+cd ..
 
 

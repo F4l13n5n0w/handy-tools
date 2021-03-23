@@ -182,5 +182,5 @@ cd /opt/
 
 
 # Install webfuzz.txt
-wget https://gist.githubusercontent.com/skim-milk/6500420e54bb154063551fc7ef527123/raw/e6b731e951ad2aaefbef4d91553e1419733f7dcd/webfuzz.txt -O /usr/share/wordlists/webfuzz.txt
+wget https://raw.githubusercontent.com/C-Sto/scrap/master/webfuzz.txt -O /usr/share/wordlists/webfuzz.txt
 

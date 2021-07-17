@@ -20,6 +20,11 @@ sudo apt-get install sublime-text
 
 # Install VS code
 ## download deb installer from the website: https://code.visualstudio.com/docs/?dv=linux64_deb
+## install plugins: GIST, Github, Github Pull Requests and Issues, Remote-SSH, Go, PowerShell, AWS Toolkit, Python
+## Add email and name:
+## git config --global user.email "fallensnow.qing@gmail.com"
+## git config --global user.name "F4l13n5n0w"
+
 curl -L "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" --output /opt/vscode_amd64.deb
 dpkg -i /opt/vscode_amd64.deb
 

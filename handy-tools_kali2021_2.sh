@@ -1,16 +1,16 @@
 #!/bin/bash
 
-echo "[+] install handy tools for kali 2020.2 VM"
+echo "[+] install handy tools for kali 2021.2 VM"
 
-sudo apt-get remove crackmapexec smbmap python3-pip
+#sudo apt-get remove crackmapexec smbmap python3-pip
 
 sudo apt-get update
 sudo apt-get full-upgrade -y
-sudo apt-get install -y python3-pip python-pip golang 
-sudo apt-get install -y testssl.sh seclists neofetch plank lolcat gnome-terminal apt-transport-https
-sudo apt-get install -y kali-community-wallpapers
-sudo apt-get install -y libssl-dev libffi-dev python-dev build-essential
-sudo pip install wheel
+sudo apt-get install -y dirsearch pacu feroxbuster cloudbrute golang python3-pip plank 
+sudo apt-get install -y testssl.sh seclists neofetch lolcat gnome-terminal
+#sudo apt-get install -y kali-community-wallpapers
+#sudo apt-get install -y libssl-dev libffi-dev python-dev build-essential
+#sudo pip install wheel
 
 # Install sublime-text3
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
@@ -19,10 +19,14 @@ sudo apt-get update
 sudo apt-get install sublime-text
 
 # Install VS code
-###! update this link before run this script
-#wget https://az764295.vo.msecnd.net/stable/5763d909d5f12fe19f215cbfdd29a91c0fa9208a/code_1.45.1-1589445302_amd64.deb
-sudo apt install /root/hivint/tmp/hivint-kali-backup/code_1.45.1-1589445302_amd64.deb
+## download deb installer from the website: https://code.visualstudio.com/docs/?dv=linux64_deb
+curl -L "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" --output /opt/vscode_amd64.deb
+dpkg -i /opt/vscode_amd64.deb
 
+# Install pip2
+cd /opt/
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
+python2 ./get-pip.py
 
 # Install bloodhound python linux tool
 pip install bloodhound
@@ -41,7 +45,7 @@ go get -u github.com/jaeles-project/gospider
 gem install evil-winrm
 
 # Install gosecrtsdump
-wget https://github.com/C-Sto/gosecretsdump/releases/download/v0.3.0/gosecretsdump_linux_v0.3.0 -O /usr/local/bin/gosecretsdump
+wget https://github.com/C-Sto/gosecretsdump/releases/download/v0.3.1/gosecretsdump_linux_v0.3.1 -O /usr/local/bin/gosecretsdump
 chmod +x /usr/local/bin/gosecretsdump
 
 
@@ -49,21 +53,21 @@ cd /opt/
 
 # Install RustScan
 ###! update the URL before run this script
-wget https://github.com/RustScan/RustScan/releases/download/1.7.1/rustscan_1.7.1_amd64.deb
-dpkg -i rustscan_1.7.1_amd64.deb
-rm rustscan_1.7.1_amd64.deb
+#wget https://github.com/RustScan/RustScan/releases/download/1.7.1/rustscan_1.7.1_amd64.deb
+#dpkg -i rustscan_1.7.1_amd64.deb
+#rm rustscan_1.7.1_amd64.deb
 
 # Install gp3finder
-git clone https://bitbucket.org/grimhacker/gpppfinder.git
-cd gpppfinder
-python3 setup.py install
-cd /opt/
+#git clone https://bitbucket.org/grimhacker/gpppfinder.git
+#cd gpppfinder
+#python3 setup.py install
+#cd /opt/
 
 # Install latest smbmap
-git clone https://github.com/ShawnDEvans/smbmap.git
-cd /opt/smbmap/
-pip3 install -r requirements.txt
-cd /opt/
+#git clone https://github.com/ShawnDEvans/smbmap.git
+#cd /opt/smbmap/
+#pip3 install -r requirements.txt
+#cd /opt/
 
 # Install latest Crackmapexec
 #wget https://github.com/byt3bl33d3r/CrackMapExec/releases/download/v5.0.2dev/cme-ubuntu-latest.zip
@@ -71,10 +75,10 @@ cd /opt/
 #chmod +x cme
 #mv cme /usr/local/bin/
 #rm cme-ubuntu-latest.zip
-git clone --recursive https://github.com/byt3bl33d3r/CrackMapExec
-cd CrackMapExec
-python3 setup.py install
-cd /opt/
+##git clone --recursive https://github.com/byt3bl33d3r/CrackMapExec
+#cd CrackMapExec
+#python3 setup.py install
+#cd /opt/
 
 # Install latest aquatone
 ###! update this before run the script
@@ -84,36 +88,35 @@ mv aquatone /usr/local/bin/
 rm aquatone_linux_amd64_1.7.0.zip
 
 # Install takeover
-git clone https://github.com/m4ll0k/takeover.git
-chmod +x takeover/takeover.py
+#git clone https://github.com/m4ll0k/takeover.git
+#chmod +x takeover/takeover.py
 
 # Install jwt_tool
-cd /opt/
-git clone https://github.com/ticarpi/jwt_tool.git
+#cd /opt/
+#git clone https://github.com/ticarpi/jwt_tool.git
 
 # Install nullinux
 git clone https://github.com/m8r0wn/nullinux.git
 cd nullinux
 sudo ./setup.sh
+cp nullinux.py /usr/local/bin/
 cd ..
 
 # Install Windows-Exploit-Suggester
+pip install xlrd==1.2.0
 git clone https://github.com/GDSSecurity/Windows-Exploit-Suggester
 cd Windows-Exploit-Suggester
 sudo ./windows-exploit-suggester.py --update
 cd ..
 
 # Install SIET
-git clone https://github.com/Sab0tag3d/SIET.git
+#git clone https://github.com/Sab0tag3d/SIET.git
 
 # Install Seth RDP MiTM tool
-git clone https://github.com/SySS-Research/Seth
+#git clone https://github.com/SySS-Research/Seth
 
 # Install Infoga
-git clone https://github.com/The404Hacking/Infoga.git
-
-# Install dirsearch
-git clone https://github.com/maurosoria/dirsearch.git
+#git clone https://github.com/The404Hacking/Infoga.git
 
 # Install CloudFail
 git clone https://github.com/m0rtem/CloudFail.git
@@ -138,6 +141,9 @@ cd ..
 sudo apt-get install phantomjs
 pip install webscreenshot
 
+# Download CharpCollection
+cd /var/www/html/
+git clone https://github.com/Flangvik/SharpCollection.git 
 
 
 mkdir /var/www/html/privesc
@@ -170,8 +176,8 @@ wget https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-
 # Download the latest PowerView.ps1
 wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1 -O /var/www/html/windows/PowerView.ps1
 # Download SharpHound
-wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.ps1 -O /var/www/html/windows/SharpHound.ps1
-wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.exe -O /var/www/html/windows/SharpHound.exe
+wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors/SharpHound.ps1 -O /var/www/html/windows/SharpHound.ps1
+wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors/SharpHound.exe -O /var/www/html/windows/SharpHound.exe
 # Download Procdump tools
 wget https://download.sysinternals.com/files/Procdump.zip -O /var/www/html/windows/Procdump.zip
 cd /var/www/html/windows

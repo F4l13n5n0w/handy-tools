@@ -7,7 +7,7 @@ echo "[+] install handy tools for kali 2021.2 VM"
 sudo apt-get update
 sudo apt-get full-upgrade -y
 sudo apt-get install -y dirsearch pacu feroxbuster cloudbrute golang python3-pip plank 
-sudo apt-get install -y testssl.sh seclists neofetch lolcat gnome-terminal
+sudo apt-get install -y testssl.sh seclists neofetch lolcat gnome-terminal subfinder
 #sudo apt-get install -y kali-community-wallpapers
 #sudo apt-get install -y libssl-dev libffi-dev python-dev build-essential
 #sudo pip install wheel
@@ -38,7 +38,6 @@ pip install bloodhound
 
 # Install golang tools
 go get github.com/Ice3man543/SubOver
-go get github.com/subfinder/subfinder
 go get github.com/c-sto/recursebuster
 go get github.com/ffuf/ffuf
 go get github.com/cjbassi/gotop

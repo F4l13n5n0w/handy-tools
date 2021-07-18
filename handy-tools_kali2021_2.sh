@@ -86,6 +86,7 @@ cd /opt/
 
 # Install latest aquatone
 ###! update this before run the script
+apt install chromium
 wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
 unzip aquatone_linux_amd64_1.7.0.zip aquatone
 mv aquatone /usr/local/bin/
@@ -194,4 +195,11 @@ cd /opt/
 
 # Install webfuzz.txt
 wget https://raw.githubusercontent.com/C-Sto/scrap/master/webfuzz.txt -O /usr/share/wordlists/webfuzz.txt
+
+
+# Innstall Burp Suite Pro
+# Make sure to change to latest version numer in the URL
+curl -L "https://portswigger.net/burp/releases/download?product=pro&version=2021.7.1&type=Linux" -o burppro.sh
+chmod +x burppro.sh
+./burppro.sh
 

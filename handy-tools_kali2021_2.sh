@@ -197,9 +197,15 @@ cd /opt/
 wget https://raw.githubusercontent.com/C-Sto/scrap/master/webfuzz.txt -O /usr/share/wordlists/webfuzz.txt
 
 
-# Innstall Burp Suite Pro
+# Install Burp Suite Pro
 # Make sure to change to latest version numer in the URL
 curl -L "https://portswigger.net/burp/releases/download?product=pro&version=2021.7.1&type=Linux" -o burppro.sh
 chmod +x burppro.sh
 ./burppro.sh
 
+# Install MONO .NET framwork compiler
+sudo apt install apt-transport-https dirmngr gnupg ca-certificates
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb https://download.mono-project.com/repo/debian stable-buster main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+sudo apt update
+sudo apt-get install mono-complete 

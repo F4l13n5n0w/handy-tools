@@ -7,7 +7,8 @@ echo "[+] install handy tools for kali 2021.4 VM"
 sudo apt-get update 
 sudo apt-get full-upgrade -y
 sudo apt-get install -y dirsearch pacu feroxbuster cloudbrute golang python3-pip plank flameshot
-sudo apt-get install -y testssl.sh seclists neofetch lolcat gnome-terminal subfinder gron jq
+sudo apt-get install -y testssl.sh seclists neofetch lolcat gnome-terminal subfinder gron jq ansible
+sudo apt-get install -y gnupg software-properties-common curl
 #sudo apt-get install -y kali-community-wallpapers
 #sudo apt-get install -y libssl-dev libffi-dev python-dev build-essential
 #sudo pip install wheel
@@ -38,6 +39,23 @@ python ./get-pip.py
 
 # Install bloodhound python linux tool
 pip3 install bloodhound
+
+# Install neo4j and bloodhound GUI
+## reboot is required after neo4j DB installed.
+## make sure to use the latest version: https://github.com/BloodHoundAD/BloodHound/releases/latest
+## use the following command to start neo4j, login using default creds: neo4j/neo4j and change to a new password
+##   neo4j console
+wget -O - https://debian.neo4j.com/neotechnology.gpg.key | sudo apt-key add -
+echo 'deb https://debian.neo4j.com stable 4.0' > /etc/apt/sources.list.d/neo4j.list
+sudo apt-get update
+
+apt-get install apt-transport-https
+sudo apt-get install neo4j -y
+
+cd /opt/
+wget https://github.com/BloodHoundAD/BloodHound/releases/download/4.0.3/BloodHound-linux-x64.zip -O BloodHound-linux-x64.zip
+unzip BloodHound-linux-x64.zip
+rm BloodHound-linux-x64.zip
 
 # Install httpx
 pip3 install httpx

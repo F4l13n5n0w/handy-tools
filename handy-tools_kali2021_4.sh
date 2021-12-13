@@ -6,7 +6,7 @@ echo "[+] install handy tools for kali 2021.4 VM"
 
 sudo apt-get update 
 sudo apt-get full-upgrade -y
-sudo apt-get install -y dirsearch pacu feroxbuster cloudbrute golang python3-pip plank 
+sudo apt-get install -y dirsearch pacu feroxbuster cloudbrute golang python3-pip plank flameshot
 sudo apt-get install -y testssl.sh seclists neofetch lolcat gnome-terminal subfinder
 #sudo apt-get install -y kali-community-wallpapers
 #sudo apt-get install -y libssl-dev libffi-dev python-dev build-essential
@@ -154,7 +154,11 @@ cd ..
 
 # Download CharpCollection
 cd /var/www/html/
-git clone https://github.com/Flangvik/SharpCollection.git 
+git clone https://github.com/Flangvik/SharpCollection.git
+
+# Download PowerSharpLoader
+cd /var/www/html/
+git clone https://github.com/F4l13n5n0w/PowerSharpLoader.git
 
 
 mkdir /var/www/html/privesc
@@ -171,6 +175,8 @@ mkdir /var/www/html/windows
 
 # copy nc.exe to windows web folder
 cp /usr/share/windows-resources/binaries/nc.exe /var/www/html/windows/nc.exe
+# Download PrivescCheck.ps1
+wget https://raw.githubusercontent.com/itm4n/PrivescCheck/master/PrivescCheck.ps1 -O /var/www/html/windows/privcheck.ps1
 # Download JAWS Enumeration script
 wget https://raw.githubusercontent.com/411Hall/JAWS/master/jaws-enum.ps1 -O /var/www/html/windows/jaws-enum.ps1
 # Download Sherlock.ps1
@@ -215,3 +221,7 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328
 echo "deb https://download.mono-project.com/repo/debian stable-buster main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
 sudo apt update
 sudo apt-get install mono-complete -y
+
+# Download mount-shared-folder.sh script
+wget https://raw.githubusercontent.com/F4l13n5n0w/handy-tools/master/mount-shared-folder.sh /root/
+chmod +x mount-shared-folder.sh

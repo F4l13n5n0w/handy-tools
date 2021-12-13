@@ -7,7 +7,7 @@ echo "[+] install handy tools for kali 2021.4 VM"
 sudo apt-get update 
 sudo apt-get full-upgrade -y
 sudo apt-get install -y dirsearch pacu feroxbuster cloudbrute golang python3-pip plank flameshot
-sudo apt-get install -y testssl.sh seclists neofetch lolcat gnome-terminal subfinder
+sudo apt-get install -y testssl.sh seclists neofetch lolcat gnome-terminal subfinder gron jq
 #sudo apt-get install -y kali-community-wallpapers
 #sudo apt-get install -y libssl-dev libffi-dev python-dev build-essential
 #sudo pip install wheel

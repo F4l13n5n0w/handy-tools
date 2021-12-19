@@ -170,6 +170,18 @@ cd ..
 ##sudo apt-get install phantomjs
 ##pip install webscreenshot
 
+# Install adb
+apt install adb -y
+
+# Install objection
+pip3 install objection
+
+# Install dex2jar
+## https://github.com/pxb1988/dex2jar
+
+# Install apktool
+## https://ibotpeaches.github.io/Apktool/install/
+
 # Download CharpCollection
 cd /var/www/html/
 git clone https://github.com/Flangvik/SharpCollection.git

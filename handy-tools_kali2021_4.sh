@@ -255,3 +255,5 @@ sudo apt-get install mono-complete -y
 # Download mount-shared-folder.sh script
 wget https://raw.githubusercontent.com/F4l13n5n0w/handy-tools/master/mount-shared-folder.sh /root/
 chmod +x mount-shared-folder.sh
+
+# add a test

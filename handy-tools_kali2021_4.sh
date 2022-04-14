@@ -61,9 +61,11 @@ rm BloodHound-linux-x64.zip
 pip3 install httpx
 
 # Install golang tools
+go install github.com/ffuf/ffuf@latest
 go install github.com/Ice3man543/SubOver@latest
 go install github.com/c-sto/recursebuster@latest
-go install github.com/ffuf/ffuf@latest
+go install github.com/C-Sto/BananaPhone@latest
+go install github.com/C-Sto/encembed@latest
 go install github.com/cjbassi/gotop@latest
 go install github.com/tomnomnom/gron@latest
 go install github.com/tomnomnom/httprobe@latest

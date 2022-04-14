@@ -30,7 +30,8 @@ curl -L "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x6
 dpkg -i /opt/vscode_amd64.deb
 
 # Create softlink for python2 to python
-ln -s /usr/bin/python2 /usr/bin/python
+ln -s /usr/bin/python2.7 /usr/bin/python
+ln -s /usr/bin/python3.10 /usr/bin/python3
 
 # Install pip2
 cd /opt/
@@ -53,8 +54,9 @@ apt-get install apt-transport-https
 sudo apt-get install neo4j -y
 
 cd /opt/
-wget https://github.com/BloodHoundAD/BloodHound/releases/download/4.0.3/BloodHound-linux-x64.zip -O BloodHound-linux-x64.zip
+wget https://github.com/BloodHoundAD/BloodHound/releases/download/rolling/BloodHound-linux-x64.zip -O BloodHound-linux-x64.zip
 unzip BloodHound-linux-x64.zip
+ln -s /opt/BloodHound-linux-x64/BloodHound /usr/bin/bloodhound
 rm BloodHound-linux-x64.zip
 
 # Install httpx

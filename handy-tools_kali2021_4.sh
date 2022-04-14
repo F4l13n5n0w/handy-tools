@@ -61,13 +61,13 @@ rm BloodHound-linux-x64.zip
 pip3 install httpx
 
 # Install golang tools
-go get github.com/Ice3man543/SubOver
-go get github.com/c-sto/recursebuster
-go get github.com/ffuf/ffuf
-go get github.com/cjbassi/gotop
-go get -u github.com/tomnomnom/gron
-go get -u github.com/tomnomnom/httprobe
-go get -u github.com/jaeles-project/gospider
+go install github.com/Ice3man543/SubOver@latest
+go install github.com/c-sto/recursebuster@latest
+go install github.com/ffuf/ffuf@latest
+go install github.com/cjbassi/gotop@latest
+go install github.com/tomnomnom/gron@latest
+go install github.com/tomnomnom/httprobe@latest
+go install github.com/jaeles-project/gospider@latest
 
 # Install evil-winrm
 gem install evil-winrm

@@ -170,6 +170,21 @@ pip3 install -r requirements.txt
 chmod +x xsstrike.py
 cd ..
 
+# Install google chrome
+cd /opt
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+dpkg -i google-chrome-stable_current_amd64.deb
+cd ..
+
+# Install firefox
+cd /opt
+curl -L "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64" --output ./firefox-latest.tar.bz2
+tar xjf ./firefox-latest.tar.bz2
+mv /usr/bin/firefox /usr/bin/firefox_old
+ln -s /opt/firefox/firefox /usr/bin/firefox
+cd ..
+
+
 # Install webscreenshot
 ##sudo apt-get install phantomjs
 ##pip install webscreenshot

@@ -73,6 +73,10 @@ go install github.com/tomnomnom/gron@latest
 go install github.com/tomnomnom/httprobe@latest
 go install github.com/jaeles-project/gospider@latest
 
+# Add go root to $PATH:
+echo 'export PATH="$PATH:/root/.local/bin:/root/go/bin"' >> /root/.zshrc
+source /root/.zshrc
+
 # Install evil-winrm
 gem install evil-winrm
 
@@ -82,6 +86,14 @@ chmod +x /usr/local/bin/gosecretsdump
 
 
 cd /opt/
+
+# Install naabu
+sudo apt install -y libpcap-dev
+go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
+# Install httpx
+go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+# Install nuclei
+go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
 
 # Install RustScan
 ###! update the URL before run this script
@@ -102,15 +114,9 @@ cd /opt/
 #cd /opt/
 
 # Install latest Crackmapexec
-#wget https://github.com/byt3bl33d3r/CrackMapExec/releases/download/v5.0.2dev/cme-ubuntu-latest.zip
-#unzip cme-ubuntu-latest.zip
-#chmod +x cme
-#mv cme /usr/local/bin/
-#rm cme-ubuntu-latest.zip
-##git clone --recursive https://github.com/byt3bl33d3r/CrackMapExec
-#cd CrackMapExec
-#python3 setup.py install
-#cd /opt/
+# python3 -m pip install pipx
+# pipx ensurepath
+# pipx install crackmapexec
 
 # Install latest aquatone
 ###! update this before run the script
@@ -232,8 +238,8 @@ wget https://raw.githubusercontent.com/411Hall/JAWS/master/jaws-enum.ps1 -O /var
 wget https://raw.githubusercontent.com/rasta-mouse/Sherlock/master/Sherlock.ps1 -O /var/www/html/windows/Sherlock.ps1
 # Download Rubeus.exe
 wget https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/raw/master/Rubeus.exe -O /var/www/html/windows/Rubeus.exe
-# Download Grouper2.exe
-wget https://github.com/l0ss/Grouper2/releases/download/0.9.64/Grouper2.exe -O /var/www/html/windows/Grouper2.exe
+# Download Grouper3r.exe
+wget https://github.com/Group3r/Group3r/releases/download/1.0.13/Group3r.exe -O /var/www/html/windows/Grouper3r.exe
 # Download gp3finder.exe
 wget https://bitbucket.org/grimhacker/gpppfinder/downloads/gp3finder_v4.0.exe -O /var/www/html/windows/gp3finder.exe
 # Download WindowsEnum.ps1
@@ -275,4 +281,5 @@ sudo apt-get install mono-complete -y
 wget https://raw.githubusercontent.com/F4l13n5n0w/handy-tools/master/mount-shared-folder.sh /root/
 chmod +x mount-shared-folder.sh
 
-# add a test
+# Change hostname 
+hostnamectl set-hostname average-student

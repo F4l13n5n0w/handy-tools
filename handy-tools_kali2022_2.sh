@@ -14,6 +14,8 @@ echo "[+] install handy tools for kali 2022.2 VM"
 
 sudo apt-get update 
 sudo apt-get full-upgrade -y
+sudo apt --fix-broken install
+
 sudo apt-get install -y dirsearch pacu feroxbuster cloudbrute golang python3-pip plank flameshot
 sudo apt-get install -y testssl.sh seclists neofetch lolcat gnome-terminal subfinder gron jq ansible
 sudo apt-get install -y gnupg software-properties-common curl
@@ -65,6 +67,7 @@ pip3 install bloodhound
 #wget -O - https://debian.neo4j.com/neotechnology.gpg.key | sudo apt-key add -
 #echo 'deb https://debian.neo4j.com stable 4.0' > /etc/apt/sources.list.d/neo4j.list
 #sudo apt-get update
+
 sudo apt-get install apt-transport-https -y
 sudo apt-get install neo4j -y
 

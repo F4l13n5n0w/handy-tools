@@ -31,8 +31,15 @@ curl -L "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x6
 dpkg -i /opt/vscode_amd64.deb
 
 # Create softlink for python2 to python
+rm -rf /usr/bin/python
+rm -rf /usr/bin/python3
 ln -s /usr/bin/python2.7 /usr/bin/python
 ln -s /usr/bin/python3.10 /usr/bin/python3
+
+# Install pip3
+cd /opt/
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip3.py
+python3 ./get-pip3.py
 
 # Install pip2
 cd /opt/

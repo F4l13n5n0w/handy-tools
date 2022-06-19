@@ -296,10 +296,11 @@ sudo apt update
 sudo apt-get install mono-complete -y
 
 # Download mount-shared-folder.sh script
-wget https://raw.githubusercontent.com/F4l13n5n0w/handy-tools/master/mount-shared-folder.sh /root/
+wget https://raw.githubusercontent.com/F4l13n5n0w/handy-tools/master/mount-shared-folder.sh -O /root/mount-shared-folder.sh
 chmod +x mount-shared-folder.sh
 
 # Change hostname 
+echo "127.0.0.1   average-student" >> /etc/hosts
 hostnamectl set-hostname average-student
 
 # Install Burp Suite Pro

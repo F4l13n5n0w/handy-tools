@@ -2,7 +2,13 @@
 
 echo "[+] install handy tools for kali 2022.2 VM"
 
-## in 2022.2 gnome-terminal has been removed from the install list... can not download it ... which is very sad.
+## in 2022.2 to install gnome-terminal:
+## Ref: https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories/
+## echo "deb http://http.kali.org/kali kali-experimental main contrib non-free" | sudo tee /etc/apt/sources.list.d/kali-experimental.list
+## echo "deb http://http.kali.org/kali kali-bleeding-edge main contrib non-free" | sudo tee /etc/apt/sources.list.d/kali-bleeding-edge.list
+## apt update
+## apt install gnome-terminal -y
+## rm *.list
 
 #sudo apt-get remove crackmapexec smbmap python3-pip
 

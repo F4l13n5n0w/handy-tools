@@ -203,6 +203,8 @@ rm -rf google-chrome-stable_current_amd64.deb
 cd ..
 
 # Install firefox
+# Make sure to set default browwer back to Firefox:
+# "Settings Manager" -> "Default Applications" -> "Web Browser" -> choose "Firefox"
 cd /opt/
 curl -L "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64" --output ./firefox-latest.tar.bz2
 tar xjf ./firefox-latest.tar.bz2

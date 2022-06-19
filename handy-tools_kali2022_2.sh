@@ -2,6 +2,8 @@
 
 echo "[+] install handy tools for kali 2022.2 VM"
 
+## in 2022.2 gnome-terminal has been removed from the install list... can not download it ... which is very sad.
+
 #sudo apt-get remove crackmapexec smbmap python3-pip
 
 sudo apt-get update 
@@ -260,7 +262,7 @@ wget https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-
 wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1 -O /var/www/html/windows/powerview_original.ps1
 wget https://raw.githubusercontent.com/ZeroDayLab/PowerSploit/master/Recon/PowerView.ps1 -O /var/www/html/windows/powerview.ps1
 # Download SharpHound
-wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors/AzureHound.ps1.ps1 -O /var/www/html/windows/AzureHound.ps1
+wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors/AzureHound.ps1 -O /var/www/html/windows/AzureHound.ps1
 wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors/SharpHound.exe -O /var/www/html/windows/SharpHound.exe
 # Download Procdump tools
 wget https://download.sysinternals.com/files/Procdump.zip -O /var/www/html/windows/Procdump.zip

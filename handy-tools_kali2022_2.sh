@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "[+] install handy tools for kali 2021.4 VM"
+echo "[+] install handy tools for kali 2022.2 VM"
 
 #sudo apt-get remove crackmapexec smbmap python3-pip
 
@@ -13,11 +13,12 @@ sudo apt-get install -y gnupg software-properties-common curl
 #sudo apt-get install -y libssl-dev libffi-dev python-dev build-essential
 #sudo pip install wheel
 
-# Install sublime-text3
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-sudo apt-get update
-sudo apt-get install sublime-text -y
+# Install sublime-text4
+cd /opt/
+wget https://download.sublimetext.com/sublime-text_build-4126_amd64.deb -O sublime4.deb
+dpkg -i ./sublime4.deb
+rm -rf ./sublime4.deb
+
 
 # Install VS code
 ## download deb installer from the website: https://code.visualstudio.com/docs/?dv=linux64_deb
@@ -46,21 +47,21 @@ pip3 install bloodhound
 ## make sure to use the latest version: https://github.com/BloodHoundAD/BloodHound/releases/latest
 ## use the following command to start neo4j, login using default creds: neo4j/neo4j and change to a new password
 ##   neo4j console
-wget -O - https://debian.neo4j.com/neotechnology.gpg.key | sudo apt-key add -
-echo 'deb https://debian.neo4j.com stable 4.0' > /etc/apt/sources.list.d/neo4j.list
-sudo apt-get update
-
-apt-get install apt-transport-https
+#wget -O - https://debian.neo4j.com/neotechnology.gpg.key | sudo apt-key add -
+#echo 'deb https://debian.neo4j.com stable 4.0' > /etc/apt/sources.list.d/neo4j.list
+#sudo apt-get update
+sudo apt-get install apt-transport-https -y
 sudo apt-get install neo4j -y
 
 cd /opt/
-wget https://github.com/BloodHoundAD/BloodHound/releases/download/rolling/BloodHound-linux-x64.zip -O BloodHound-linux-x64.zip
+wget https://github.com/BloodHoundAD/BloodHound/releases/download/4.1.0/BloodHound-linux-x64.zip -O BloodHound-linux-x64.zip
 unzip BloodHound-linux-x64.zip
 ln -s /opt/BloodHound-linux-x64/BloodHound /usr/bin/bloodhound
 rm BloodHound-linux-x64.zip
 
 # Install httpx
-pip3 install httpx
+#pip3 install httpx
+apt install python3-httpx -y
 
 # Install golang tools
 go install github.com/ffuf/ffuf@latest
@@ -177,17 +178,19 @@ chmod +x xsstrike.py
 cd ..
 
 # Install google chrome
-cd /opt
+cd /opt/
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 dpkg -i google-chrome-stable_current_amd64.deb
+rm -rf google-chrome-stable_current_amd64.deb
 cd ..
 
 # Install firefox
-cd /opt
+cd /opt/
 curl -L "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64" --output ./firefox-latest.tar.bz2
 tar xjf ./firefox-latest.tar.bz2
 mv /usr/bin/firefox /usr/bin/firefox_old
 ln -s /opt/firefox/firefox /usr/bin/firefox
+rm -rf /opt/firefox-latest.tar.bz2
 cd ..
 
 
@@ -247,9 +250,10 @@ wget https://raw.githubusercontent.com/absolomb/WindowsEnum/master/WindowsEnum.p
 wget https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/winPEAS/winPEASbat/winPEAS.bat -O /var/www/html/windows/winPEAS.bat
 # Download the latest PowerView.ps1
 #wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1 -O /var/www/html/windows/PowerView.ps1
+wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1 -O /var/www/html/windows/powerview_original.ps1
 wget https://raw.githubusercontent.com/ZeroDayLab/PowerSploit/master/Recon/PowerView.ps1 -O /var/www/html/windows/powerview.ps1
 # Download SharpHound
-wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors/SharpHound.ps1 -O /var/www/html/windows/SharpHound.ps1
+wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors/AzureHound.ps1.ps1 -O /var/www/html/windows/AzureHound.ps1
 wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors/SharpHound.exe -O /var/www/html/windows/SharpHound.exe
 # Download Procdump tools
 wget https://download.sysinternals.com/files/Procdump.zip -O /var/www/html/windows/Procdump.zip
@@ -259,16 +263,12 @@ rm Procdump.zip
 cd /opt/
 
 
+# Install PEASS-NG priv esc tools
+apt install peass -y
 
 # Install webfuzz.txt
 wget https://raw.githubusercontent.com/C-Sto/scrap/master/webfuzz.txt -O /usr/share/wordlists/webfuzz.txt
 
-
-# Install Burp Suite Pro
-# Make sure to change to latest version numer in the URL
-curl -L "https://portswigger.net/burp/releases/download?product=pro&version=2021.10.3&type=Linux" -o burppro.sh
-chmod +x burppro.sh
-./burppro.sh
 
 # Install MONO .NET framwork compiler
 sudo apt install apt-transport-https dirmngr gnupg ca-certificates -y
@@ -283,3 +283,9 @@ chmod +x mount-shared-folder.sh
 
 # Change hostname 
 hostnamectl set-hostname average-student
+
+# Install Burp Suite Pro
+# Make sure to change to latest version numer in the URL
+curl -L "https://portswigger.net/burp/releases/download?product=pro&type=Linux" -o burppro.sh
+chmod +x burppro.sh
+./burppro.sh

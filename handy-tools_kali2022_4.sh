@@ -25,7 +25,7 @@ sudo apt-get install -y gnupg software-properties-common curl
 
 # Install sublime-text4
 cd /opt/
-wget https://download.sublimetext.com/sublime-text_build-4126_amd64.deb -O sublime4.deb
+wget https://download.sublimetext.com/sublime-text_build-4143_amd64.deb -O sublime4.deb
 dpkg -i ./sublime4.deb
 rm -rf ./sublime4.deb
 
@@ -245,8 +245,9 @@ wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh -O /
 wget https://raw.githubusercontent.com/sleventyeleven/linuxprivchecker/master/linuxprivchecker.py -O /var/www/html/privesc/linuxprivchecker.py
 wget https://raw.githubusercontent.com/mzet-/linux-exploit-suggester/master/linux-exploit-suggester.sh -O /var/www/html/privesc/linux-exploit-suggester.sh
 wget https://raw.githubusercontent.com/jondonas/linux-exploit-suggester-2/master/linux-exploit-suggester-2.pl -O /var/www/html/privesc/linux-exploit-suggester-2.pl
-wget https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh -O /var/www/html/privesc/linpeas.sh
-
+# Need to change the URL to get the lastest linpeas
+#wget https://github.com/carlospolop/PEASS-ng/releases/download/20221204/linpeas.sh -O /var/www/html/privesc/linpeas.sh
+#wget https://github.com/carlospolop/PEASS-ng/releases/download/20221204/linpeas_linux_amd64 -O /var/www/html/privesc/linpeasx64
 
 # Create and setup windows web folder
 mkdir /var/www/html/windows
@@ -267,14 +268,15 @@ wget https://github.com/Group3r/Group3r/releases/download/1.0.13/Group3r.exe -O 
 wget https://bitbucket.org/grimhacker/gpppfinder/downloads/gp3finder_v4.0.exe -O /var/www/html/windows/gp3finder.exe
 # Download WindowsEnum.ps1
 wget https://raw.githubusercontent.com/absolomb/WindowsEnum/master/WindowsEnum.ps1 -O /var/www/html/windows/WindowsEnum.ps1
-wget https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/winPEAS/winPEASbat/winPEAS.bat -O /var/www/html/windows/winPEAS.bat
+#wget https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/winPEAS/winPEASbat/winPEAS.bat -O /var/www/html/windows/winPEAS.bat
 # Download the latest PowerView.ps1
 #wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1 -O /var/www/html/windows/PowerView.ps1
 wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1 -O /var/www/html/windows/powerview_original.ps1
 wget https://raw.githubusercontent.com/ZeroDayLab/PowerSploit/master/Recon/PowerView.ps1 -O /var/www/html/windows/powerview.ps1
 # Download SharpHound
-wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors/AzureHound.ps1 -O /var/www/html/windows/AzureHound.ps1
+wget https://github.com/BloodHoundAD/AzureHound/releases/download/v1.2.2/azurehound-windows-amd64.zip -O /var/www/html/windows/AzureHound.zip
 wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors/SharpHound.exe -O /var/www/html/windows/SharpHound.exe
+wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors/SharpHound.ps1 -O /var/www/html/windows/SharpHound.ps1
 # Download Procdump tools
 wget https://download.sysinternals.com/files/Procdump.zip -O /var/www/html/windows/Procdump.zip
 cd /var/www/html/windows
@@ -285,6 +287,10 @@ cd /opt/
 
 # Install PEASS-NG priv esc tools
 apt install peass -y
+cp /usr/share/peass/linpeas/linpeas.sh /var/www/html/privesc/linpeas.sh
+cp /usr/share/peass/linpeas/linpeas_linux_amd64 /var/www/html/privesc/linpeas_linux_amd64
+cp /usr/share/peass/winpeas/winPEAS.bat /var/www/html/windows/winPEAS.bat
+cp /usr/share/peass/winpeas/winPEASany_ofs.exe /var/www/html/windows/winPEASany_ofs.exe
 
 # Install webfuzz.txt
 wget https://raw.githubusercontent.com/C-Sto/scrap/master/webfuzz.txt -O /usr/share/wordlists/webfuzz.txt
@@ -299,7 +305,7 @@ sudo apt-get install mono-complete -y
 
 # Download mount-shared-folder.sh script
 wget https://raw.githubusercontent.com/F4l13n5n0w/handy-tools/master/mount-shared-folder.sh -O /root/mount-shared-folder.sh
-chmod +x mount-shared-folder.sh
+chmod +x /root/mount-shared-folder.sh
 
 # Change hostname 
 echo "127.0.0.1   average-student" >> /etc/hosts

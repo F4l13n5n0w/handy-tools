@@ -1,6 +1,6 @@
 # handy-tools
 
-This is a bash script to automatically install tools when setup a Kali linux or ubuntu linux. 
+This is a bash script to automatically install tools when setup a Kali linux or ubuntu linux. test
 
 ## Tools List
 

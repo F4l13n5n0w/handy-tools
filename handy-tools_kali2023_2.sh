@@ -303,6 +303,14 @@ cp /usr/share/peass/winpeas/winPEASany_ofs.exe /var/www/html/windows/winPEASany_
 wget https://raw.githubusercontent.com/C-Sto/scrap/master/webfuzz.txt -O /usr/share/wordlists/webfuzz.txt
 
 
+## Install CloudFlared
+## Download the latest cloudflared
+cd /opt/
+wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb -O cloudflared-stable-linux-amd64.deb
+dpkg -i ./cloudflared-stable-linux-amd64.deb
+rm -rf ./cloudflared-stable-linux-amd64.deb
+
+
 # Install MONO .NET framwork compiler
 sudo apt install apt-transport-https dirmngr gnupg ca-certificates -y
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "[+] install handy tools for kali 2023.1 VM"
+echo "[+] install handy tools for kali 2023.2 VM"
 
 ## in 2022.2 to install gnome-terminal:
 ## Ref: https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories/
@@ -28,6 +28,7 @@ cd /opt/
 wget https://github.com/epi052/feroxbuster/releases/download/v2.10.0/x86_64-linux-feroxbuster.zip -O ./feroxbuster.zip
 unzip ./feroxbuster.zip
 mv ./feroxbuster /usr/local/bin/
+chmod +x /usr/local/bin/feroxbuster
 rm -rf ./feroxbuster.zip
 
 

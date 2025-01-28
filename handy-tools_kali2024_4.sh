@@ -1,31 +1,32 @@
 #!/bin/bash
 
-echo "[+] install handy tools for kali 2022.2 VM"
+echo "[+] install handy tools for kali 2024.4 VM"
 
-## in 2022.2 to install gnome-terminal:
-## Ref: https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories/
-## echo "deb http://http.kali.org/kali kali-experimental main contrib non-free" | sudo tee /etc/apt/sources.list.d/kali-experimental.list
-## echo "deb http://http.kali.org/kali kali-bleeding-edge main contrib non-free" | sudo tee /etc/apt/sources.list.d/kali-bleeding-edge.list
-## apt update
-## apt install gnome-terminal -y
-## rm *.list
-
-#sudo apt-get remove crackmapexec smbmap python3-pip
 
 sudo apt-get update 
 sudo apt-get full-upgrade -y
-sudo apt --fix-broken install
 
-sudo apt-get install -y dirsearch pacu feroxbuster cloudbrute golang python3-pip plank flameshot
-sudo apt-get install -y testssl.sh seclists neofetch lolcat gnome-terminal subfinder gron jq ansible
-sudo apt-get install -y gnupg software-properties-common curl
+sudo apt-get install -y dirsearch pacu cloudbrute golang python3-pip plank flameshot
+sudo apt-get install -y testssl.sh seclists neofetch lolcat gnome-terminal subfinder gron jq ansible-core
+sudo apt-get install -y gnupg software-properties-common 
 #sudo apt-get install -y kali-community-wallpapers
 #sudo apt-get install -y libssl-dev libffi-dev python-dev build-essential
 #sudo pip install wheel
 
-# Install sublime-text4
+
+# Install the latest version of feroxbuster
+## https://github.com/epi052/feroxbuster/releases/
 cd /opt/
-wget https://download.sublimetext.com/sublime-text_build-4143_amd64.deb -O sublime4.deb
+wget https://github.com/epi052/feroxbuster/releases/download/v2.11.0/feroxbuster_amd64.deb.zip -O ./feroxbuster.zip
+unzip ./feroxbuster.zip
+dpkg -i feroxbuster_2.11.0-1_amd64.deb
+rm -rf ./feroxbuster*
+
+
+# Install sublime-text4
+## https://www.sublimetext.com/download_thanks?target=x64-deb
+cd /opt/
+wget https://download.sublimetext.com/sublime-text_build-4192_amd64.deb -O sublime4.deb
 dpkg -i ./sublime4.deb
 rm -rf ./sublime4.deb
 
@@ -37,51 +38,44 @@ rm -rf ./sublime4.deb
 ## git config --global user.email "fallensnow.qing@gmail.com"
 ## git config --global user.name "F4l13n5n0w"
 
+cd /opt/
 curl -L "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64" --output /opt/vscode_amd64.deb
 dpkg -i /opt/vscode_amd64.deb
+rm -rf /opt/vscode_amd64.deb
 
 # Create softlink for python2 to python
 rm -rf /usr/bin/python
-rm -rf /usr/bin/python3
 ln -s /usr/bin/python2.7 /usr/bin/python
-ln -s /usr/bin/python3.10 /usr/bin/python3
 
 # Install pip3
-cd /opt/
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip3.py
-python3 ./get-pip3.py
+#cd /opt/
+#curl https://bootstrap.pypa.io/get-pip.py -o get-pip3.py
+#python3 ./get-pip3.py
 
 # Install pip2
 cd /opt/
 curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
 python ./get-pip.py
 
+# Setup pip3
+sudo apt install python3-pip -y
+ln -s /usr/bin/pip3.11 /usr/bin/pip3
+
 # Install bloodhound python linux tool
-pip3 install bloodhound
+pip3 install bloodhound --break-system-packages
 
-# Install neo4j and bloodhound GUI
-## reboot is required after neo4j DB installed.
-## make sure to use the latest version: https://github.com/BloodHoundAD/BloodHound/releases/latest
-## use the following command to start neo4j, login using default creds: neo4j/neo4j and change to a new password
-##   neo4j console
-#wget -O - https://debian.neo4j.com/neotechnology.gpg.key | sudo apt-key add -
-#echo 'deb https://debian.neo4j.com stable 4.0' > /etc/apt/sources.list.d/neo4j.list
-#sudo apt-get update
-
+# Install neo4j and bloodhound 4.3.1 GUI
 sudo apt-get install apt-transport-https -y
 sudo apt-get install neo4j -y
+sudo apt-get install bloodhound -y
 
-cd /opt/
-wget https://github.com/BloodHoundAD/BloodHound/releases/download/4.1.0/BloodHound-linux-x64.zip -O BloodHound-linux-x64.zip
-unzip BloodHound-linux-x64.zip
-ln -s /opt/BloodHound-linux-x64/BloodHound /usr/bin/bloodhound
-rm BloodHound-linux-x64.zip
+# Install dnsreaper
+#cd /opt/
+#git clone https://github.com/punk-security/dnsReaper.git
+#cd dnsReaper
+#pip3 install -r ./requirements.txt --break-system-packages
 
-# Install httpx
-#pip3 install httpx
-apt install python3-httpx -y
-
-# Install golang tools
+# Install golang tools, golang is already the latest 1.22.2
 go install github.com/ffuf/ffuf@latest
 go install github.com/Ice3man543/SubOver@latest
 go install github.com/c-sto/recursebuster@latest
@@ -91,27 +85,27 @@ go install github.com/cjbassi/gotop@latest
 go install github.com/tomnomnom/gron@latest
 go install github.com/tomnomnom/httprobe@latest
 go install github.com/jaeles-project/gospider@latest
+go install github.com/projectdiscovery/httpx/cmd/httpx@latest
 
 # Add go root to $PATH:
 echo 'export PATH="$PATH:/root/.local/bin:/root/go/bin"' >> /root/.zshrc
 source /root/.zshrc
 
-# Install evil-winrm
-gem install evil-winrm
+# Install nexexec
+sudo apt install pipx git -y
+pipx ensurepath
+pipx install git+https://github.com/Pennyw0rth/NetExec
 
 # Install gosecrtsdump
-wget https://github.com/C-Sto/gosecretsdump/releases/download/v0.3.1/gosecretsdump_linux_v0.3.1 -O /usr/local/bin/gosecretsdump
-chmod +x /usr/local/bin/gosecretsdump
+#wget https://github.com/C-Sto/gosecretsdump/releases/download/v0.3.1/gosecretsdump_linux_v0.3.1 -O /usr/local/bin/gosecretsdump
+#chmod +x /usr/local/bin/gosecretsdump
 
 
 cd /opt/
 
-# Install naabu
+# Install naabu and nuclei
 sudo apt install -y libpcap-dev
 go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
-# Install httpx
-go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
-# Install nuclei
 go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
 
 # Install RustScan
@@ -139,7 +133,7 @@ go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
 
 # Install latest aquatone
 ###! update this before run the script
-apt install chromium
+apt install chromium -y
 wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
 unzip aquatone_linux_amd64_1.7.0.zip aquatone
 mv aquatone /usr/local/bin/
@@ -154,17 +148,19 @@ rm aquatone_linux_amd64_1.7.0.zip
 #git clone https://github.com/ticarpi/jwt_tool.git
 
 # Install nullinux
+cd /opt/
 git clone https://github.com/m8r0wn/nullinux.git
 cd nullinux
 sudo ./setup.sh
 cp nullinux.py /usr/local/bin/
 cd ..
 
-# Install Windows-Exploit-Suggester
-pip install xlrd==1.2.0
-git clone https://github.com/GDSSecurity/Windows-Exploit-Suggester
-cd Windows-Exploit-Suggester
-sudo ./windows-exploit-suggester.py --update
+# Install Windows-Exploit-Suggester next gen
+cd /opt/
+pip3 install xlrd==1.2.0
+git clone https://github.com/bitsadmin/wesng --depth 1
+cd wesng
+sudo ./wes.py --update
 cd ..
 
 # Install SIET
@@ -179,24 +175,25 @@ cd ..
 # Install CloudFail
 git clone https://github.com/m0rtem/CloudFail.git
 cd CloudFail
-pip3 install -r requirements.txt
+pip3 install -r requirements.txt --break-system-packages
 cd ..
 
 # Install CMSmap
-git clone https://github.com/Dionach/CMSmap
-cd CMSmap
-pip3 install .
-cd ..
+#git clone https://github.com/Dionach/CMSmap
+#cd CMSmap
+#pip3 install .
+#cd ..
 
 # Install XSStrike
-git clone https://github.com/s0md3v/XSStrike.git
-cd XSStrike
-pip3 install -r requirements.txt
-chmod +x xsstrike.py
-cd ..
+#git clone https://github.com/s0md3v/XSStrike.git
+#cd XSStrike
+#pip3 install -r requirements.txt
+#chmod +x xsstrike.py
+#cd ..
 
 # Install google chrome
 cd /opt/
+apt install libu2f-udev -y
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 dpkg -i google-chrome-stable_current_amd64.deb
 rm -rf google-chrome-stable_current_amd64.deb
@@ -205,24 +202,33 @@ cd ..
 # Install firefox
 # Make sure to set default browwer back to Firefox:
 # "Settings Manager" -> "Default Applications" -> "Web Browser" -> choose "Firefox"
-cd /opt/
-curl -L "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64" --output ./firefox-latest.tar.bz2
-tar xjf ./firefox-latest.tar.bz2
-mv /usr/bin/firefox /usr/bin/firefox_old
-ln -s /opt/firefox/firefox /usr/bin/firefox
-rm -rf /opt/firefox-latest.tar.bz2
-cd ..
+#cd /opt/
+#curl -L "https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64" --output ./firefox-latest.tar.bz2
+#tar xjf ./firefox-latest.tar.bz2
+#mv /usr/bin/firefox /usr/bin/firefox_old
+#ln -s /opt/firefox/firefox /usr/bin/firefox
+#rm -rf /opt/firefox-latest.tar.bz2
+#cd ..
 
 
 # Install webscreenshot
 ##sudo apt-get install phantomjs
 ##pip install webscreenshot
 
+## Install Nessus keygen:
+cd /opt/
+git clone https://github.com/harshdhamaniya/nessuskeygen.git
+
+## Install web uploadserver, listen on 8000
+cd /opt/
+wget https://github.com/akovacs/uploadserver/releases/download/v1.0.0/uploadserver-x86_64-linux
+chmod +x uploadserver-x86_64-linux
+
 # Install adb
 apt install adb -y
 
 # Install objection
-pip3 install objection
+pip3 install objection --break-system-package
 
 # Install dex2jar
 ## https://github.com/pxb1988/dex2jar
@@ -280,7 +286,7 @@ wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors
 # Download Procdump tools
 wget https://download.sysinternals.com/files/Procdump.zip -O /var/www/html/windows/Procdump.zip
 cd /var/www/html/windows
-unzip Procdump.zip procdump.exe procdump64.exe
+unzip Procdump.zip
 rm Procdump.zip
 cd /opt/
 
@@ -296,11 +302,19 @@ cp /usr/share/peass/winpeas/winPEASany_ofs.exe /var/www/html/windows/winPEASany_
 wget https://raw.githubusercontent.com/C-Sto/scrap/master/webfuzz.txt -O /usr/share/wordlists/webfuzz.txt
 
 
+## Install CloudFlared
+## Download the latest cloudflared
+cd /opt/
+wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb -O cloudflared-stable-linux-amd64.deb
+dpkg -i ./cloudflared-stable-linux-amd64.deb
+rm -rf ./cloudflared-stable-linux-amd64.deb
+
+
 # Install MONO .NET framwork compiler
-sudo apt install apt-transport-https dirmngr gnupg ca-certificates -y
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb https://download.mono-project.com/repo/debian stable-buster main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
-sudo apt update
+#sudo apt install apt-transport-https dirmngr gnupg ca-certificates -y
+#sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+#echo "deb https://download.mono-project.com/repo/debian stable-buster main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+#sudo apt update
 sudo apt-get install mono-complete -y
 
 # Download mount-shared-folder.sh script
@@ -311,8 +325,17 @@ chmod +x /root/mount-shared-folder.sh
 echo "127.0.0.1   average-student" >> /etc/hosts
 hostnamectl set-hostname average-student
 
+
+# Install Insomnia
+cd /opt/
+curl -1sLf 'https://packages.konghq.com/public/insomnia/setup.deb.sh' | sudo -E distro=ubuntu codename=focal bash
+sudo apt-get update
+sudo apt-get install insomnia -y
+
+
 # Install Burp Suite Pro
 # Make sure to change to latest version numer in the URL
+cd /opt/
 curl -L "https://portswigger.net/burp/releases/download?product=pro&type=Linux" -o burppro.sh
 chmod +x burppro.sh
 ./burppro.sh

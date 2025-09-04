@@ -1,13 +1,13 @@
 #!/bin/bash
 
-echo "[+] install handy tools for kali 2024.1 VM"
+echo "[+] install handy tools for kali 2024.4 VM"
 
 
 sudo apt-get update 
 sudo apt-get full-upgrade -y
 
 sudo apt-get install -y dirsearch pacu cloudbrute golang python3-pip plank flameshot
-sudo apt-get install -y testssl.sh seclists neofetch lolcat gnome-terminal subfinder gron jq ansible-core
+sudo apt-get install -y testssl.sh seclists lolcat gnome-terminal subfinder gron jq ansible-core
 sudo apt-get install -y gnupg software-properties-common 
 #sudo apt-get install -y kali-community-wallpapers
 #sudo apt-get install -y libssl-dev libffi-dev python-dev build-essential
@@ -17,16 +17,16 @@ sudo apt-get install -y gnupg software-properties-common
 # Install the latest version of feroxbuster
 ## https://github.com/epi052/feroxbuster/releases/
 cd /opt/
-wget https://github.com/epi052/feroxbuster/releases/download/v2.10.2/feroxbuster_amd64.deb.zip -O ./feroxbuster.zip
+wget https://github.com/epi052/feroxbuster/releases/download/v2.11.0/feroxbuster_amd64.deb.zip -O ./feroxbuster.zip
 unzip ./feroxbuster.zip
-dpkg -i feroxbuster_2.10.2-1_amd64.deb
+dpkg -i feroxbuster_2.11.0-1_amd64.deb
 rm -rf ./feroxbuster*
 
 
 # Install sublime-text4
 ## https://www.sublimetext.com/download_thanks?target=x64-deb
 cd /opt/
-wget https://download.sublimetext.com/sublime-text_build-4169_amd64.deb -O sublime4.deb
+wget https://download.sublimetext.com/sublime-text_build-4192_amd64.deb -O sublime4.deb
 dpkg -i ./sublime4.deb
 rm -rf ./sublime4.deb
 
@@ -62,7 +62,7 @@ sudo apt install python3-pip -y
 ln -s /usr/bin/pip3.11 /usr/bin/pip3
 
 # Install bloodhound python linux tool
-pip3 install bloodhound
+pip3 install bloodhound --break-system-packages
 
 # Install neo4j and bloodhound 4.3.1 GUI
 sudo apt-get install apt-transport-https -y
@@ -70,10 +70,10 @@ sudo apt-get install neo4j -y
 sudo apt-get install bloodhound -y
 
 # Install dnsreaper
-cd /opt/
-git clone https://github.com/punk-security/dnsReaper.git
-cd dnsReaper
-pip3 install -r ./requirements.txt
+#cd /opt/
+#git clone https://github.com/punk-security/dnsReaper.git
+#cd dnsReaper
+#pip3 install -r ./requirements.txt --break-system-packages
 
 # Install golang tools, golang is already the latest 1.22.2
 go install github.com/ffuf/ffuf@latest
@@ -157,7 +157,7 @@ cd ..
 
 # Install Windows-Exploit-Suggester next gen
 cd /opt/
-pip3 install xlrd==1.2.0
+pip3 install xlrd==1.2.0 --break-system-packages
 git clone https://github.com/bitsadmin/wesng --depth 1
 cd wesng
 sudo ./wes.py --update
@@ -175,7 +175,7 @@ cd ..
 # Install CloudFail
 git clone https://github.com/m0rtem/CloudFail.git
 cd CloudFail
-pip3 install -r requirements.txt
+pip3 install -r requirements.txt --break-system-packages
 cd ..
 
 # Install CMSmap
@@ -215,11 +215,20 @@ cd ..
 ##sudo apt-get install phantomjs
 ##pip install webscreenshot
 
+## Install Nessus keygen:
+cd /opt/
+git clone https://github.com/harshdhamaniya/nessuskeygen.git
+
+## Install web uploadserver, listen on 8000
+cd /opt/
+wget https://github.com/akovacs/uploadserver/releases/download/v1.0.0/uploadserver-x86_64-linux
+chmod +x uploadserver-x86_64-linux
+
 # Install adb
 apt install adb -y
 
 # Install objection
-pip3 install objection
+pip3 install objection --break-system-package
 
 # Install dex2jar
 ## https://github.com/pxb1988/dex2jar
@@ -228,11 +237,9 @@ pip3 install objection
 ## https://ibotpeaches.github.io/Apktool/install/
 
 # Download CharpCollection
-cd /var/www/html/
-git clone https://github.com/Flangvik/SharpCollection.git
-
 # Download PowerSharpLoader
 cd /var/www/html/
+git clone https://github.com/Flangvik/SharpCollection.git
 git clone https://github.com/F4l13n5n0w/PowerSharpLoader.git
 
 
@@ -252,7 +259,7 @@ mkdir /var/www/html/windows
 # copy nc.exe to windows web folder
 cp /usr/share/windows-resources/binaries/nc.exe /var/www/html/windows/nc.exe
 # Download PrivescCheck.ps1
-wget https://raw.githubusercontent.com/itm4n/PrivescCheck/master/PrivescCheck.ps1 -O /var/www/html/windows/privcheck.ps1
+wget https://github.com/itm4n/PrivescCheck/releases/download/2025.09.03-1/PrivescCheck.ps1 -O /var/www/html/windows/privcheck.ps1
 # Download JAWS Enumeration script
 wget https://raw.githubusercontent.com/411Hall/JAWS/master/jaws-enum.ps1 -O /var/www/html/windows/jaws-enum.ps1
 # Download Sherlock.ps1
@@ -277,7 +284,7 @@ wget https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors
 # Download Procdump tools
 wget https://download.sysinternals.com/files/Procdump.zip -O /var/www/html/windows/Procdump.zip
 cd /var/www/html/windows
-unzip Procdump.zip procdump.exe procdump64.exe
+unzip Procdump.zip
 rm Procdump.zip
 cd /opt/
 
@@ -330,3 +337,7 @@ cd /opt/
 curl -L "https://portswigger.net/burp/releases/download?product=pro&type=Linux" -o burppro.sh
 chmod +x burppro.sh
 ./burppro.sh
+
+
+## Install CloudFox (https://github.com/BishopFox/cloudfox)
+go install github.com/BishopFox/cloudfox@latest

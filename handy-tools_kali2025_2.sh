@@ -341,3 +341,9 @@ chmod +x burppro.sh
 
 ## Install CloudFox (https://github.com/BishopFox/cloudfox)
 go install github.com/BishopFox/cloudfox@latest
+
+## setup a dummy website for cloudflare 1o1.st site:
+cd /var/www/html/
+git clone https://github.com/codewithsadee/wren.git
+mv /var/www/html/wren /var/www/html/1o1site
+cd /opt/

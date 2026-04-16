@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "[+] install handy tools for kali 2024.4 VM"
+echo "[+] install handy tools for kali 2025.2 VM"
 
 
 sudo apt-get update 
